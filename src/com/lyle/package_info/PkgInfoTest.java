@@ -1,7 +1,7 @@
 package com.lyle.package_info;
 
 import java.lang.annotation.Annotation;
-
+import java.util.List;
 public class PkgInfoTest {
 
 	public static void main(String[] args) {
@@ -15,9 +15,15 @@ public class PkgInfoTest {
 		for(Annotation annotation:pkg.getAnnotations()){
 			System.out.println(annotation.annotationType().getName());
 		}
+		System.out.println("==============");
 		//==========在其他包中用===========
 		Package pkg2 = PkgInfoTest.class.getPackage();
 		System.out.println(pkg2.getName());
-		
+		//查出的是bin文件夹里class文件的个数
+		List<Class<?>> list = ClassUtils.getClasses(pkg2.getName());
+		System.out.println(list.size());
+		for(Class<?> c:list){
+			System.out.println(c.getName());
+		}
 	}
 }
