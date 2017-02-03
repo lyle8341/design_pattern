@@ -6,23 +6,23 @@ package com.lyle.p3.单例模式;
  * @author: Lyle
  * @date: 2017年1月24日 下午1:50:15
  */
-public class Singleton {
+public class LazySingleton {
 
 	/*
 	 * 私有静态实例
 	 */
-	private static Singleton single = new Singleton();
+	private static LazySingleton single = new LazySingleton();
 
 	/*
 	 * 私有构造器
 	 */
-	private Singleton() {
+	private LazySingleton() {
 	}
 
 	/*
 	 * 静态方法，创建实例
 	 */
-	public static Singleton getInstance() {
+	public static LazySingleton getInstance() {
 		return single;
 	}
 }
